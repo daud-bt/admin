@@ -44,7 +44,7 @@
             <div class="main-content">
                 <div class="foto"><img src="logobotol.png" alt=""></div>              
                 <div class="info">  
-                    Lorem ipsum dolor sit  consectetur adipisicing elit. At assumenda sit beatae eaque nulla in eligendi odio deserunt laudantium. Voluptatum ipsa ex consectetur quos odio, temporibus saepe doloribus accusantium praesentium?
+                    Lorem ipsum dolor sit   adipisicing elit. At assumenda sit beatae eaque nulla in eligendi odio deserunt laudantium. Voluptatum ipsa ex consectetur quos odio, temporibus saepe doloribus accusantium praesentium?
                 </div>
             </div>
     </div>
