@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2020 at 05:45 AM
+-- Generation Time: Mar 05, 2020 at 07:01 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -33,6 +33,8 @@ CREATE TABLE `barang` (
   `harga` int(11) NOT NULL,
   `stok` int(10) NOT NULL,
   `nama` varchar(20) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `category` varchar(50) NOT NULL,
   `id_gambar_cover` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,9 +42,29 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `harga`, `stok`, `nama`, `id_gambar_cover`) VALUES
-(1, 200, 50, 'botol bola', 1),
-(2, 200, 40, 'botol kacang', 1);
+INSERT INTO `barang` (`id_barang`, `harga`, `stok`, `nama`, `deskripsi`, `category`, `id_gambar_cover`) VALUES
+(1, 200, 50, 'botol bola', '', '', 1),
+(2, 200, 40, 'botol kacang', '', '', 1),
+(9, 0, 0, '', '', '', NULL),
+(10, 122, 123, 'baru', '1sada', '', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id_category` int(11) NOT NULL,
+  `nama_category` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id_category`, `nama_category`) VALUES
+(1, 'botol');
 
 -- --------------------------------------------------------
 
@@ -74,6 +96,12 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id_category`);
+
+--
 -- Indexes for table `gambarlebih`
 --
 ALTER TABLE `gambarlebih`
@@ -87,7 +115,13 @@ ALTER TABLE `gambarlebih`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gambarlebih`
