@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+require_once("conection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,12 +60,14 @@ echo mysqli_error($conn);
 while ($row=mysqli_fetch_array($insert)) 
 {    
 	?>
-                                   <option value="<?=$row["id_category"]?>">sdadas<?=$row["nama_category"]?></option>
+                                   <option value="<?=$row["id_category"]?>"><?=$row["nama_category"]?></option>
 <?php } ?>
                                     </select> <br> <br>
-                        Deskripsi: <textarea name="desc" id="" cols="30" rows="10"></textarea><br> <br>
-                        Stok: <input type="number" name="stok" id=""><br> <br>
+
+                    Deskripsi: <textarea name="desc" id="" cols="30" rows="10"></textarea><br> <br>
+                    Stok: <input type="number" name="stok" id=""><br> <br>
                     Pilih gambar: <br> <br>
+
                     <input type="file" name="image" id="">
 
                         <input type="submit" value="Insert" name="insert" class="insert">
