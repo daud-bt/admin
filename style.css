@@ -99,8 +99,13 @@ body{
     border: 1px solid black;
 }
 
-
- 
+.fotorumah{
+    width:400px;
+    height:250px;
     
-
+}
  
+.fotorumah>img{
+    width: 100%;
+    height: 100%;
+}
