@@ -8,14 +8,13 @@ require_once("conection.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="style.css">
-   <script src="font-awesome-kit.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="database.css">
+    <script src="font-awesome-kit.js" crossorigin="anonymous"></script>
+    <title>edit</title>
 </head>
 <body>
+    
+    <br>
     <div class="wrapper">
         <div class="sidebar">
             <h2>menu</h2>
@@ -46,26 +45,18 @@ require_once("conection.php");
         </div>
         <div class="main">
                  <div class="main-barang" ><img src="logobotol.png" alt=""> </div>   
-                 <div style="text-align:right">
-                     <form action="insertbotol.php"><button style="border-radius:5px; margin-right:10px; width:150px; " >Tambah botol baru</button> </form> 
-                </div>         
-                 <?php
-
-$insert= mysqli_query($conn,"select * from barang b,gambarlebih g where b.id_gambar_cover=g.id_gambar ");  
-echo mysqli_error($conn);
-while ($row=mysqli_fetch_array($insert)) 
-{    
-	?>
-                 <div class="barang"> <img src="<?=$row["nama_file"]?>" style="width:345px; padding-left:20px;" alt="">
-                    <div style="text-align:center"><h2><?=$row["nama"]?> </h2> </div>
-                    <div style="text-align:center"> <h4>Harga: Rp.<?=$row["harga"]?></h4>  </div>
-                    <div style="text-align:center"> 
-                        <button id="btnedit"><a href="editform.php?id=<?=$row["id_barang"]?>">Edit</a> </button>  <button id="btndelete">Delete</button>
-                    </div>
-                </div>
                 
-<?php } ?>    
-        </div>     
-            
+                 <div class="barang"> 
+                    <h1>edit</h1> <br> <br>
+                    <form action=""> 
+                        Nama:<input type="text" name="" id="" ><br> <br>
+                        Harga:<input type="text" name="" id="" > <br> <br>
+                        Deskripsi:<input type="text" name="" id="" > <br> <br>
+                        image: <input type="text" name="" id=""> <input type="submit" value="browse">
+
+                    </form>
+                </div>
+                  
+        </div> 
 </body>
 </html>
