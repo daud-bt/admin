@@ -10,7 +10,7 @@ require_once("conection.php");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="database.css">
    <script src="font-awesome-kit.js" crossorigin="anonymous"></script>
 
 </head>
@@ -45,27 +45,18 @@ require_once("conection.php");
         </div>
         <div class="main">
                  <div class="main-barang" ><img src="logobotol.png" alt=""> </div>   
-                 <div style="text-align:right">
-                     <form action="insertbotol.php"><button style="border-radius:5px; margin-right:10px; width:150px; " >Tambah botol baru</button> </form> 
-                </div>         
-                 <?php
+                
+                 <div class="barang"> 
+                    <h1>Insert</h1> <br> <br>
+                    <form action=""> 
+                        Nama:<input type="text" name="" id="" ><br> <br>
+                        Harga:<input type="text" name="" id="" > <br> <br>
+                        Deskripsi:<input type="text" name="" id="" >
 
-$insert= mysqli_query($conn,"select * from barang b,gambarlebih g where b.id_gambar_cover=g.id_gambar ");  
-echo mysqli_error($conn);
-while ($row=mysqli_fetch_array($insert)) 
-{    
-	?>
-                 <div class="barang"> <img src="<?=$row["nama_file"]?>" style="width:345px; padding-left:20px;" alt="">
-                    <div style="text-align:center"><h2><?=$row["nama"]?></h2> </div>
-                    <div style="text-align:center"> <h4>Harga: Rp.<?=$row["harga"]?></h4>  </div>
-                    <div style="text-align:center"> 
-                        <form action="admin.php">
-                        <button >Edit</button>  <button >Delete</button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
                 
-<?php } ?>    
+   
         </div>     
             
 </body>
