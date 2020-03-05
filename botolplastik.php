@@ -50,13 +50,13 @@ require_once("conection.php");
                 </div>         
                  <?php
 
-$insert= mysqli_query($conn,"select * from barang b,gambarlebih g where b.id_gambar_cover=g.id_gambar ");  
+$insert= mysqli_query($conn,"select g.nama_file, b.nama,b.id_barang,b.harga,b.stok,b.deskripsi from barang b,gambarlebih g where b.id_gambar_cover=g.id_gambar ");  
 echo mysqli_error($conn);
 while ($row=mysqli_fetch_array($insert)) 
 {    
 	?>
-                 <div class="barang"> <img src="<?=$row["nama_file"]?>" style="width:345px; padding-left:20px;" alt="">
-                    <div style="text-align:center"><h2><?=$row["nama"]?></h2> </div>
+                 <div class="barang"> <img src="<?=$row["nama_file"]?>" style="width:100%; padding-left:20px;" alt="">
+                    <div style="text-align:center"><h2><?=$row["nama"]?></h2>  </div>
                     <div style="text-align:center"> <h4>Harga: Rp.<?=$row["harga"]?></h4>  </div>
                     <div style="text-align:center"> 
                         <form action="admin.php">

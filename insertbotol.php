@@ -1,7 +1,4 @@
-<?php
-session_start();
-require_once("conection.php");
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,10 +45,27 @@ require_once("conection.php");
                 
                  <div class="barang"> 
                     <h1>Insert</h1> <br> <br>
-                    <form action=""> 
-                        Nama:<input type="text" name="" id="" ><br> <br>
-                        Harga:<input type="text" name="" id="" > <br> <br>
-                        Deskripsi:<input type="text" name="" id="" >
+                    <form action="insert.php" method="POST" enctype="multipart/form-data"> 
+                        Nama:<input type="text" name="nama" id="" ><br> <br>
+                        Harga:<input type="text" name="harga" id="" > <br> <br>
+                        Category: <select id="category">
+                       
+                       <?php
+
+$insert= mysqli_query($conn,"select * from category ");  
+echo mysqli_error($conn);
+while ($row=mysqli_fetch_array($insert)) 
+{    
+	?>
+                                   <option value="<?=$row["id_category"]?>">sdadas<?=$row["nama_category"]?></option>
+<?php } ?>
+                                    </select> <br> <br>
+                        Deskripsi: <textarea name="desc" id="" cols="30" rows="10"></textarea><br> <br>
+                        Stok: <input type="number" name="stok" id=""><br> <br>
+                    Pilih gambar: <br> <br>
+                    <input type="file" name="image" id="">
+
+                        <input type="submit" value="Insert" name="insert" class="insert">
 
                     </form>
                 </div>
