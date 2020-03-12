@@ -75,8 +75,8 @@ body{
     float: left;
     width: 100%;
     height: 100%;
-    margin-left: 15%;
-    border: 1px solid black;
+    margin-left: 18%;
+    
 
 }
 .main-barang{
@@ -86,8 +86,6 @@ body{
     padding: 0;
     margin: 30px;
     text-align: center;
-
-    border: 1px solid black;
 }
 
 button{

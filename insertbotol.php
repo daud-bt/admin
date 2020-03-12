@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+require_once("conection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,11 +47,11 @@
                  <div class="main-barang" ><img src="logobotol.png" alt=""> </div>   
                 
                  <div class="barang"> 
-                    <h1>Insert</h1> <br> <br>
+                    <h1>Tambah Barang Baru</h1> <br> <br>
                     <form action="insert.php" method="POST" enctype="multipart/form-data"> 
                         Nama:<input type="text" name="nama" id="" ><br> <br>
                         Harga:<input type="text" name="harga" id="" > <br> <br>
-                        Category: <select id="category">
+                        Category: <select id="category" name="cat">
                        
                        <?php
 
@@ -57,14 +60,16 @@ echo mysqli_error($conn);
 while ($row=mysqli_fetch_array($insert)) 
 {    
 	?>
-                                   <option value="<?=$row["id_category"]?>">sdadas<?=$row["nama_category"]?></option>
+                                   <option value="<?=$row["id_category"]?>"><?=$row["nama_category"]?></option>
 <?php } ?>
                                     </select> <br> <br>
-                        Deskripsi: <textarea name="desc" id="" cols="30" rows="10"></textarea><br> <br>
-                        Stok: <input type="number" name="stok" id=""><br> <br>
-                    Pilih gambar: <br> <br>
-                    <input type="file" name="image" id="">
 
+                    Deskripsi: <textarea name="desc" id="" cols="30" rows="10"></textarea><br> <br>
+                    Stok: <input type="number" name="stok" id=""><br> <br>
+                    Pilih gambar: <br> <br>
+
+                    <input type="file" name="image[]" multiple="multiple" id="">
+<br> <br>
                         <input type="submit" value="Insert" name="insert" class="insert">
 
                     </form>
