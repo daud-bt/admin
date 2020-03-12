@@ -47,11 +47,11 @@ require_once("conection.php");
                  <div class="main-barang" ><img src="logobotol.png" alt=""> </div>   
                 
                  <div class="barang"> 
-                    <h1>Insert</h1> <br> <br>
+                    <h1>Tambah Barang Baru</h1> <br> <br>
                     <form action="insert.php" method="POST" enctype="multipart/form-data"> 
                         Nama:<input type="text" name="nama" id="" ><br> <br>
                         Harga:<input type="text" name="harga" id="" > <br> <br>
-                        Category: <select id="category">
+                        Category: <select id="category" name="cat">
                        
                        <?php
 
@@ -68,8 +68,8 @@ while ($row=mysqli_fetch_array($insert))
                     Stok: <input type="number" name="stok" id=""><br> <br>
                     Pilih gambar: <br> <br>
 
-                    <input type="file" name="image" id="">
-
+                    <input type="file" name="image[]" multiple="multiple" id="">
+<br> <br>
                         <input type="submit" value="Insert" name="insert" class="insert">
 
                     </form>
