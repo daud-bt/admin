@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once("conection.php");
-
+$id = $_GET["id"];
+$sql = "select * from barang where id_barang=$id";
+$result = mysqli_query($conn,$sql);
+$result = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,11 +51,14 @@ require_once("conection.php");
                 
                  <div class="barang"> 
                     <h1>edit</h1> <br> <br>
-                    <form action=""> 
-                        Nama:<input type="text" name="" id="" ><br> <br>
-                        Harga:<input type="text" name="" id="" > <br> <br>
-                        Deskripsi:<input type="text" name="" id="" > <br> <br>
-                        image: <input type="text" name="" id=""> <input type="submit" value="browse">
+                    <form action="edit.php" method="POST"  enctype="multipart/form-data"> 
+                        <input type="hidden" name="id" value="<?= $result["id_barang"]?>">
+                        Nama:<input type="text" name="upnama" id="" value="<?=$result["nama"]?>"><br> <br>
+                        Harga:<input type="text" name="upharga" id="" value="<?=$result["harga"]?>" > <br> <br>
+                        Deskripsi:<input type="text" name="updesc" id="" value="<?=$result["deskripsi"]?>"> <br> <br>
+                        image: <input type="file" name="upimage" id="">
+                        <br>
+                        <input type="submit" name="btnsubmit"  value="submit">
 
                     </form>
                 </div>
