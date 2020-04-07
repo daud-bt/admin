@@ -56,9 +56,21 @@ $result = mysqli_fetch_array($result);
                         Nama:<input type="text" name="upnama" id="" value="<?=$result["nama"]?>"><br> <br>
                         Harga:<input type="text" name="upharga" id="" value="<?=$result["harga"]?>" > <br> <br>
                         Deskripsi:<input type="text" name="updesc" id="" value="<?=$result["deskripsi"]?>"> <br> <br>
+                        Category: <select id="category" name="cat">
+                        <?php
+
+$insert= mysqli_query($conn,"select * from category ");  
+echo mysqli_error($conn);
+while ($row=mysqli_fetch_array($insert)) 
+{    
+	?>
+                                   <option value="<?=$row["id_category"]?>"><?=$row["nama_category"]?></option>
+<?php } ?>
+                                    </select> <br> <br>
+
                         image: <input type="file" name="upimage" id="">
                         <br>
-                        <input type="submit" name="btnsubmit"  value="submit">
+                        <input type="submit" name="btnsubmit"  value="submit" width="100px">
 
                     </form>
                 </div>
